@@ -27,7 +27,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "dist/*"
           target: "/home/tezzeraktmedia/htdocs/tezzeraktmedia.space/"
-          strip_components: 1
+          strip_components: 0
           rm: true
 
   
