@@ -9,6 +9,7 @@ import ContactPage from './Pages/Contact';
 import PortfolioPage from './Pages/Portfolio';
 import AboutPage from './Pages/About';
 import RedirectOnRefresh from './components/RedirectOnRefresh';
+
 import '../src/Global.css';
 
 function App() {
