@@ -1,0 +1,46 @@
+/* VideoManager.css */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust if you want a different height */
+  
+  z-index: 0;
+  pointer-events: auto; /* Allows interaction within the container */
+}
+
+.video-container video {
+  pointer-events: auto; /* Allow user interaction with the video element */
+  width: 100%;
+  height: 100vh;
+}
+
+/* Styles for the background video */
+.video-placeholder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* 'cover' to ensure video fully covers the area */
+  z-index: -1; /* Behind interactive content */
+}
+
+/* Styles for the overlay video */
+.overlay-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; /* Ensure the overlay video appears on top of the background video */
+  pointer-events: none; /* Disables interaction, ensuring clicks pass through */
+}
+
+/* If there are buttons or other interactive elements, they should be placed with a higher z-index */
+.interactive-content {
+  position: absolute; /* Adjust based on your layout needs */
+  z-index: 2; /* Above all video layers */
+  pointer-events: auto; /* Ensures these elements are clickable */
+}

@@ -1,0 +1,42 @@
+/* Header Latest Track Container */
+.header-latest-track-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items for better spacing on mobile */
+    max-width: 100%; /* Ensure it doesn't overflow the header */
+    padding: 8px; /* Add padding for better touch interaction */
+}
+
+/* Header Cover Art */
+.header-cover-art {
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Add some border-radius for aesthetics */
+    flex-grow: 1; /* Add some spacing between cover art and track links */
+}
+
+
+/* Header Track Links */
+.header-track-links {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow this element to take available space */
+    
+}
+
+.header-track-links a {
+    color: #555; /* Adjust text color */
+    text-decoration: none;
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 5px; /* Add margin between track links */
+    padding: 5px 0; /* Add vertical padding for better tap targets */
+    
+}
+
+.header-track-links a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive adjustments */
+
+

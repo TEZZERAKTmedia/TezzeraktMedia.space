@@ -1,0 +1,121 @@
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  .about-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    height: calc(100vh - 20vh); /* Calculate height dynamically */
+    width: 80%;
+    border-radius: 50px;
+    
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    overflow-y: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Adding a semi-transparent background */
+    margin-top: 20vh; /* Space from the top */
+  }
+  
+  /* Media Queries to adjust the top percentage for different screen sizes */
+  @media (max-width: 600px) {
+    .about-container {
+      width: 90%;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1200px) {
+    .about-container {
+      width: 85%;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .about-container {
+      width: 80%;
+    }
+  }
+  
+  .about-section {
+    margin: 20px;
+    padding: 20px;
+    border: px solid #ccc;
+    border-radius: 8px;
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.2);
+    animation: fadeInAndStay 1s forwards;
+    transition: background-color 1s ease-in-out;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  @keyframes fadeInAndStay {
+    0% {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+  
+  .about-section:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .about-header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+  }
+  
+  .contact-form-container {
+    background: #f8f8f8;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background: #666;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background: #0084ff;
+    color: white;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: auto;
+  }
+  

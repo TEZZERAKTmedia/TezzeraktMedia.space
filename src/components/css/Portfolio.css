@@ -1,0 +1,164 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.portfolio-container {
+  position: relative; /* Keeps the header fixed during scrolling */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  height: 100%;
+  border-radius: 50px;
+  z-index: 0;
+  opacity: 0; /* Hidden initially */
+  animation: fadeIn 1s ease-in-out 3s forwards; /* Animation with delay */
+}
+
+
+/* Media Queries to adjust the top percentage for different screen sizes */
+@media (max-width: 600px) {
+  .portfolio-container {
+    top: 75%; /* Adjust top for mobile devices */
+    
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .portfolio-container {
+    top: 70%; /* Adjust top for tablets */
+  }
+}
+
+@media (min-width: 1201px) {
+  .portfolio-container {
+    top: 65%; /* Default top for desktops */
+  }
+}
+
+
+.portfolio-header {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+}
+
+@keyframes fadeInAndStay {
+  0% {
+      background-color: rgba(0, 0, 0, 0); /* Start fully transparent */
+  }
+  100% {
+      background-color: rgba(0, 0, 0, .8); /* End at a mild opacity */
+  }
+}
+
+.portfolio-section {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #ccc;
+  height: 13.4%;
+  z-index: 9999;
+  
+  background-color: rgba(0, 0, 0, 0.2); /* Initial background state post-animation */
+  animation: fadeInAndStay 10s forwards; /* Animation to initial state */
+  transition: background-color 10s ease-in-out; /* Smooth transition for background color changes */
+  perspective: 1000px; /* For 3D flip effect */
+  position: relative; /* Needed for absolute positioning of front/back */
+  
+}
+
+.portfolio-section:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker on hover for visibility */
+}
+
+.front, .back {
+  padding: 20px;
+  width: 90%;
+  
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  
+}
+
+.back {
+  transform: rotateY(180deg);
+  color: rgb(0, 0, 0);
+  background-color: #cacaca;
+  border-radius: 5px;
+  
+}
+
+.flip .front {
+  transform: rotateY(-180deg);
+}
+
+.flip .back {
+  transform: rotateY(0deg);
+}
+
+.contact-form-container {
+  background: #f8f8f8;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.tile {
+  background-color: #f4f4f400;
+  
+  border-radius: 8px;
+  margin-top: 10%;
+  
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: #666;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background: #0084ff;
+  color: white;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
