@@ -1,63 +1,61 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useVideo } from '../VideoContext'; // Ensure this path is correct
-import introVideoSrc from '../assets/INTRO1000.webm'; // Path to the intro video
-import loopVideoSrc from '../assets/LOOP4000.webm'; // Path to the looping video
+import introVideoSrc from '../assets/INTRO1000.webm';
+import loopVideoSrc from '../assets/LOOP4000.webm';
 import PortfolioOverlay from '../Pages/PortfolioOverlay.jsx';
 
-import Header from './Header.jsx';
-
 import './css/VideoManager.css';
-import './css/LatestTrack.css';
-
-
 
 function Home() {
-  const { introPlayed, setIntroPlayed } = useVideo();
-  const [currentVideo, setCurrentVideo] = useState(introPlayed ? loopVideoSrc : introVideoSrc);
-  
-  const videoRef = useRef(null);
-
-  // Dummy data for LatestTrack
-  const track = {
-    coverArt: "/path/to/coverArt.jpg",
-    spotify: "https://open.spotify.com/artist/7xw1rXws8fauJeu9xLcUvL",
-    appleMusic: "https://music.apple.com/us/artist/id1675921847",
-    youtubeMusic: "https://music.youtube.com/channel/UCnqpcyA6u470xchpNKr01ng"
-  };
-
-  const handleIntroVideoEnd = () => {
-    setIntroPlayed(true);
-    setCurrentVideo(loopVideoSrc);
-  };
+  const [introFinished, setIntroFinished] = useState(false);
+  const introVideoRef = useRef(null);
+  const loopVideoRef = useRef(null);
 
   useEffect(() => {
-    videoRef.current.load();
-  }, [currentVideo]);
+    if (introFinished && loopVideoRef.current) {
+      loopVideoRef.current.play(); // Play the loop video immediately
+    }
+  }, [introFinished]);
+
+  const handleTimeUpdate = () => {
+    if (introVideoRef.current) {
+      const remainingTime = introVideoRef.current.duration - introVideoRef.current.currentTime;
+      if (remainingTime < 0.5) {
+        setIntroFinished(true);
+      }
+    }
+  };
 
   return (
-    
-      
-      
-      
-    <div className="video-container" >
-      
-      <PortfolioOverlay className="component-overlay"/>
+    <div className="video-container">
+      <PortfolioOverlay className="component-overlay" />
+
+      {/* Intro Video - Always plays on reload */}
+      {!introFinished && (
+        <video
+          ref={introVideoRef}
+          className={`overlay-video ${introFinished ? "fade-out" : ""}`}
+          autoPlay
+          muted
+          playsInline
+          onTimeUpdate={handleTimeUpdate}
+        >
+          <source src={introVideoSrc} type="video/webm" />
+        </video>
+      )}
+
+      {/* Looping Video (Preloaded and hidden initially) */}
       <video
-        ref={videoRef}
-        className="overlay-video"
-        autoPlay 
+        ref={loopVideoRef}
+        className={`overlay-video ${introFinished ? "fade-in" : "hidden"}`}
+        autoPlay
         muted
         playsInline
-        loop={currentVideo === loopVideoSrc}
-        onEnded={currentVideo === introVideoSrc ? handleIntroVideoEnd : undefined}
+        loop
       >
-        <source src={introVideoSrc} type="video/webm" />
-        Your browser does not support the video tag.
+        <source src={loopVideoSrc} type="video/webm" />
       </video>
     </div>
-    
   );
 }
-
 
 export default Home;

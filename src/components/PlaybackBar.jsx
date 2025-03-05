@@ -44,8 +44,8 @@ const PlayBar = () => {
   }, [audioRef]);
 
   const messages = [
-    'Now streaming on all platforms!',
-    '(or click to listen here now)',
+    
+    'click to listen here now',
   ];
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const PlayBar = () => {
   return (
     <div className={`playback-bar-container ${flipped ? 'flipped' : ''}`}>
       {/* Front Side with Video Background */}
-      <div className="playback-bar-front" onClick={handleFlip} style={{ position: 'fixed', overflow: 'hidden' }}>
+      <div className="playback-bar-front" onClick={handleFlip} style={{ backgroundColor: 'black', position: 'fixed', overflow: 'hidden' }}>
         <video
           src="/COAGULUM.webm"
           autoPlay
@@ -96,7 +96,7 @@ const PlayBar = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
             zIndex: -1,
           }}
         />
@@ -113,7 +113,7 @@ const PlayBar = () => {
                   exit="exit"
                   variants={letterAnimation}
                   transition={{ delay: index * 0.05, duration: 0.5 }}
-                  style={{ display: 'inline-block' }}
+                  style={{ display: 'inline-block', }}
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </motion.span>
