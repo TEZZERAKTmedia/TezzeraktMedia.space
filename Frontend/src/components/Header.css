@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header-wrapper {
+  position: fixed; /* Keeps the header fixed during scrolling */
+  
+  top: 8%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to true center */
+  width: 100%; /* Adjust the width as needed */
+  height: 10%;
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+  color: white;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensures it's on top of other content */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Optional: adds depth with a shadow */
+  transition: top 0.3s ease; /* Smooth transition for top */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .header-wrapper {
+    top: 10%; /* Move down for mobile */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .header-wrapper {
+    top: 10%; /* Adjust top for tablets */
+  }
+}
+
+@media (min-width: 1201px) {
+  .header-wrapper {
+    top: 8%; /* Adjust top for desktops */
+  }
+}
+
+.main-header {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  height: 100px; /* Change to auto to accommodate varying content size */
+  min-height: 50px; /* Set a minimum height */
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 8px 4px rgba(0,0,0,0.5);
+  transition: top 0.3s ease; /* Smooth transition for top */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .main-header {
+    top: 50%; /* Move down for mobile */
+    border-radius: 10px;
+   
+   
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .main-header {
+    top: 50%; /* Adjust top for tablets */
+  }
+}
+
+@media (min-width: 1201px) {
+  .main-header {
+    top: 50%; /* Adjust top for desktops */
+  }
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5em;
+  cursor: pointer;
+  font-family: Bebas Neue;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 0px;
+  transition: color 0.3s ease;
+  font-family: Bebas Neue;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover {
+  color: #333;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo:hover {
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.music-links {
+  display: flex;
+  gap: 10px;
+  
+}
