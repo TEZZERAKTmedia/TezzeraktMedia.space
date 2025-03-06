@@ -14,9 +14,11 @@
   font-family: Arial, sans-serif;
   height: 100%;
   border-radius: 50px;
+  padding: 20px;
   z-index: 10;
+  
   opacity: 0; /* Hidden initially */
-  animation: fadeIn 1s ease-in-out 3s forwards; /* Animation with delay */
+  animation: fadeIn 0s ease-in-out 0s forwards; /* Animation with delay */
 }
 
 
@@ -112,13 +114,7 @@
   transform: rotateY(0deg);
 }
 
-.contact-form-container {
-  background: #f8f8f8;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+
 
 button {
   background: #555;

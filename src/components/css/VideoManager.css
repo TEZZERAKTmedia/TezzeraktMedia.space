@@ -6,6 +6,7 @@
   height: 100vh; /* Full height for background effect */
   z-index: 0;
   pointer-events: auto; /* Allows interaction within the container */
+  background-color: black;
 }
 
 .video-container video {
@@ -28,6 +29,7 @@
 /* Overlay video styles */
 .overlay-video {
   position: fixed;
+  
   top: 0;
   left: 0;
   width: 100vw;

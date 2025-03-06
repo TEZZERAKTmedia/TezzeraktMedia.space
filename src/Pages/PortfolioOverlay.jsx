@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../components/css/Portfolio.css'; // Ensure CSS path is correct
 import ThrivePersonology from '../assets/ThrivePersonology.webp';
@@ -75,7 +75,7 @@ function PortfolioOverlay() {
   };
 
   return (
-    <div className="portfolio-container">
+    <div className="portfolio-container" style={{backgroundColor:'#00000078'}}>
       <section id="web-design" className={`portfolio-section ${flipWeb ? 'flip' : ''}`} onClick={() => toggleFlip('web')}>
         <div className="front">
           <h2>Web Design</h2>
@@ -130,10 +130,12 @@ function PortfolioOverlay() {
           <h2>Music Production</h2>
           <p>Listen to my compositions and audio engineering projects spanning various genres.</p>
         </div>
+        <Link to="/music"> 
         <div className="back">
           <h2>Tools & Technologies</h2>
           <p>Logic Pro, Ozone9 </p>
         </div>
+        </Link>
       </section>
 
       <section id="3d-design" className={`portfolio-section ${flipDesign ? 'flip' : ''}`} onClick={() => toggleFlip('design')}>
@@ -141,12 +143,14 @@ function PortfolioOverlay() {
           <h2>3D/Visual Design</h2>
           <p>Explore my 3D visualization projects </p>
         </div>
+        
         <div className="back">
           <h2>Tools & Technologies</h2>
           <p>Blender, Fusion 360, Davinci Resolve </p>
         </div>
+        
+        
       </section>
-
       <div className="contact-form-container">
         <h2>Contact Me</h2>
         <form ref={form} onSubmit={sendEmail}>
@@ -156,6 +160,7 @@ function PortfolioOverlay() {
           <button type="submit">Send Message</button>
         </form>
       </div>
+
     </div>
   );
 }

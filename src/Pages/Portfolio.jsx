@@ -36,9 +36,10 @@ function PortfolioPage() {
   return (
     
     <div className="video-container">
+      <div className='body'>
       
       <PortfolioOverlay className="component-overlay"/>
-      
+      </div>
       <video
         ref={videoRef}
         className="overlay-video"

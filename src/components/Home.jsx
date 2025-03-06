@@ -27,7 +27,9 @@ function Home() {
 
   return (
     <div className="video-container">
+      <div className='body'>
       <PortfolioOverlay className="component-overlay" />
+      </div>
 
       {/* Intro Video - Always plays on reload */}
       {!introFinished && (
