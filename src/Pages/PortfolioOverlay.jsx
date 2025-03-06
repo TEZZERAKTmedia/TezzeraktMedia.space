@@ -1,14 +1,48 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import '../components/css/Portfolio.css'; // Ensure CSS path is correct
 import ThrivePersonology from '../assets/ThrivePersonology.webp';
+import BoogieBoys from '../assets/BoogieBoys.webp';
+
+
 
 function PortfolioOverlay() {
   const [flipWeb, setFlipWeb] = useState(false);
   const [flipMusic, setFlipMusic] = useState(false);
   const [flipDesign, setFlipDesign] = useState(false);
   const [showLatestWebsites, setShowLatestWebsites] = useState(false);
+  
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const toggleLatestWebsites = (e) => {
+    e.stopPropagation();
+    setShowLatestWebsites(!showLatestWebsites);
+  };
+
+  useEffect(() => {
+    const checkScrollPosition = () => {
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+        setCanScrollLeft(scrollLeft > 0);
+        setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+      }
+    };
+    
+    checkScrollPosition();
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.addEventListener("scroll", checkScrollPosition);
+    }
+    
+    return () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.removeEventListener("scroll", checkScrollPosition);
+      }
+    };
+  }, [showLatestWebsites]);
   const form = useRef();
 
   const toggleFlip = (section) => {
@@ -17,10 +51,6 @@ function PortfolioOverlay() {
     if (section === 'design') setFlipDesign(!flipDesign);
   };
 
-  const toggleLatestWebsites = (e) => {
-    e.stopPropagation();
-    setShowLatestWebsites(!showLatestWebsites);
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -35,6 +65,12 @@ function PortfolioOverlay() {
       });
 
     e.target.reset();
+  };
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300; // Adjust scroll speed as needed
+      scrollContainerRef.current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
   };
 
   return (
@@ -54,16 +90,32 @@ function PortfolioOverlay() {
 
       <AnimatePresence>
         {showLatestWebsites && (
-          <motion.div
-            className="latest-websites"
+          <motion.div 
+            className="latest-websites-container"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <a href="https://portfolio.thrivepersonology.trentynnicholas.com" className="tile" target="_blank" rel="noopener noreferrer">
-              <img src={ThrivePersonology} alt="Thrive Personology" style={{ width: '300px', height: 'auto' }} />
-            </a>
+            {/* Left Scroll Button */}
+            {canScrollLeft && (
+              <button className="scroll-button left" onClick={() => scroll("left")}>◀</button>
+            )}
+
+            {/* Scrollable Content */}
+            <div className="latest-websites" ref={scrollContainerRef}>
+              <a href="https://thrive.tezzeraktmedia.space"  target="_blank" rel="noopener noreferrer">
+                <img className="tile" src={ThrivePersonology} alt="Thrive Personology" />
+              </a>
+              <a href="https://boogieboys.one" target="_blank" rel="noopener noreferrer">
+                <img className="tile" src={BoogieBoys} alt="BoogieBoys" />
+              </a>
+            </div>
+
+            {/* Right Scroll Button */}
+            {canScrollRight && (
+              <button className="scroll-button right" onClick={() => scroll("right")}>▶</button>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

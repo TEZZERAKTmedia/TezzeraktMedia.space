@@ -162,3 +162,64 @@ form {
   max-width: 500px;
   margin: auto;
 }
+
+.latest-websites-container {
+  position: relative;
+  width: 100%;
+  max-width: 90vw;
+  margin: auto;
+  overflow: hidden;
+}
+
+.latest-websites {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.latest-websites::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.tile {
+  background-color: #f7f7f7;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  border-left: solid 5px #0084ff;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.left {
+  left: -40px; /* Adjust positioning */
+}
+
+.scroll-button.right {
+  right: -40px; /* Adjust positioning */
+}
