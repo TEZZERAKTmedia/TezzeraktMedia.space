@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../components/css/Portfolio.css'; // Ensure CSS path is correct
 import ThrivePersonology from '../assets/ThrivePersonology.webp';
 import BoogieBoys from '../assets/BoogieBoys.webp';
+import BakersBurns from '../assets/BakersBurns1.webp';
 
 
 
@@ -104,11 +105,15 @@ function PortfolioOverlay() {
 
             {/* Scrollable Content */}
             <div className="latest-websites" ref={scrollContainerRef}>
-              <a href="https://thrive.tezzeraktmedia.space"  target="_blank" rel="noopener noreferrer">
-                <img className="tile" src={ThrivePersonology} alt="Thrive Personology" />
-              </a>
+
               <a href="https://boogieboys.one" target="_blank" rel="noopener noreferrer">
                 <img className="tile" src={BoogieBoys} alt="BoogieBoys" />
+              </a>
+              <a href="https://bakersburns.com" target="_blank" rel="noopener noreferrer">
+                <img className="tile" src={BakersBurns} alt="BoogieBoys" />
+              </a>
+              <a href="https://thrive.tezzeraktmedia.space"  target="_blank" rel="noopener noreferrer">
+                <img className="tile" src={ThrivePersonology} alt="Thrive Personology" />
               </a>
             </div>
 
