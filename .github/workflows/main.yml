@@ -16,7 +16,7 @@ jobs:
       - name: Debug Repository Files
         run: |
           echo "Listing all files..."
-          ls -R dist/
+          ls -R Frontend/dist/
 
       - name: Deploy Frontend to VPS
         uses: appleboy/scp-action@master
