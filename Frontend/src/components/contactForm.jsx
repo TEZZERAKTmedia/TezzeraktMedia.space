@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
+import {registerApi} from "../config/axios";
 import "./contactForm.css";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +20,10 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-
+  
     try {
-      const API_URL =
-        import.meta.env.MODE === "development"
-          ? "http://localhost:3456/api/email"
-          : "https://api.tezzeraktmedia.space/api/email";
-
-      const response = await axios.post(API_URL, formData);
+      // Use the relative endpoint; the baseURL is already set in registerApi
+      const response = await registerApi.post("/api/email", formData);
       setStatus("✅ Message sent successfully!");
       setFormData({ name: "", email: "", message: "" }); // Reset form
     } catch (error) {
@@ -34,7 +31,7 @@ const ContactForm = () => {
       setStatus("❌ Failed to send message. Try again.");
     }
   };
-
+  
   return (
     <div className="contact-form-wrapper">
       <h2 className="contact-title">Get in Touch</h2>
