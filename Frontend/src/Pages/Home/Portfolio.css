@@ -17,23 +17,21 @@
   overflow-x: hidden;       /* Prevent horizontal scroll if not needed */
   font-family: Arial, sans-serif;
   z-index: 10;              /* Above background, below other overlays if needed */
-  
-  /* Optional styling */
-  background-color: rgba(0, 0, 0, 0.459);  /* If you want a dark overlay */
-  animation: fadeIn 0.5s ease-in-out forwards;  /* Fade-in animation */
-
-  /* Remove or adjust border-radius/padding if you want a full overlay */
+  background-color: rgba(0, 0, 0, 0.373);  /* If you want a dark overlay */
+  animation: fadeIn 10s ease-in-out forwards;  /* Fade-in animation */
   border-radius: 0;
-              /* Keep some padding if you want space inside */
   padding-bottom: 20px;
   opacity: 0;               /* Start hidden, fadeIn will fix it */
 }
-
+.portfolio-section-container {
+  
+  left: 0;
+}
 
 /* Media Queries to adjust the top percentage for different screen sizes */
 @media (max-width: 600px) {
   .portfolio-section-container {
-    top: 75%; /* Adjust top for mobile devices */
+    margin-top: 40%; /* Adjust top for mobile devices */
     height: 100%;
     
   }
@@ -41,19 +39,18 @@
 
 @media (min-width: 601px) and (max-width: 1200px) {
   .portfolio-section-container {
-    top: 70%; /* Adjust top for tablets */
+    margin-top: 30%; /* Adjust top for tablets */
+    height: 100%;
   }
 }
 
 @media (min-width: 1201px) {
   .portfolio-section-container {
-    top: 65%; /* Default top for desktops */
+    margin-top: 20%; /* Default top for desktops */
+    height: 100%;
   }
 }
-.portfolio-section-container {
-  margin-top: 50%;
-  left: 0;
-}
+
 
 
 .portfolio-header {
@@ -82,7 +79,7 @@
   height: 13.4%;
   z-index: 9999;
   
-  background-color:rgba(0, 0, 0, 0.459); /* Initial background state post-animation */
+  background-color:rgba(0, 0, 0, 0.326); /* Initial background state post-animation */
   animation: fadeInAndStay 10s forwards; /* Animation to initial state */
   transition: background-color 10s ease-in-out; /* Smooth transition for background color changes */
   perspective: 1000px; /* For 3D flip effect */
@@ -116,6 +113,7 @@
   color: rgb(0, 0, 0);
   background-color: #cacaca;
   border-radius: 5px;
+  
   
 }
 

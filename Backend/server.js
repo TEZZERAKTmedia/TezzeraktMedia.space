@@ -8,18 +8,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Allow CORS for both localhost (development) and your production domain
-const allowedOrigins = [
-  'http://localhost:3010', // Dev frontend
-  'https://tezzeraktmedia.space', // Production frontend
-  'https://www.tezzeraktmedia.space' // Production frontend with www
-];
 
-app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
 
 // Use email routes
 app.use('/api/email', emailRoutes);
