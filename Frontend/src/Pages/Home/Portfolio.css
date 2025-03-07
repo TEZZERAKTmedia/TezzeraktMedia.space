@@ -18,7 +18,7 @@
   font-family: Arial, sans-serif;
   z-index: 10;              /* Above background, below other overlays if needed */
   background-color: rgba(0, 0, 0, 0.373);  /* If you want a dark overlay */
-  animation: fadeIn 10s ease-in-out forwards;  /* Fade-in animation */
+  animation: fadeIn 5s ease-in-out forwards;  /* Fade-in animation */
   border-radius: 0;
   padding-bottom: 20px;
   opacity: 0;               /* Start hidden, fadeIn will fix it */
