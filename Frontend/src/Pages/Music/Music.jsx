@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useVideo } from '../VideoContext'; // Ensure this path is correct
-import introVideoSrc from '../assets/LOOP4000.webm'; // Path to the intro video
-import loopVideoSrc from '../assets/LOOP4000.webm'; // Path to the looping video
-import MusicPageOverlay from '../components/MusicOverlay';
-import '../components/VideoManager.css';
-import '../components/LatestTrack.css';
+import { useVideo } from '../Home/VideoContext'; // Ensure this path is correct
+import introVideoSrc from '../../assets/LOOP4000.webm'; // Path to the intro video
+import loopVideoSrc from '../../assets/LOOP4000.webm'; // Path to the looping video
+import MusicPageOverlay from './MusicOverlay';
+import '../Home/VideoManager.css';
+import './LatestTrack.css';
 
 function MusicPage() {
   const { introPlayed, setIntroPlayed } = useVideo();

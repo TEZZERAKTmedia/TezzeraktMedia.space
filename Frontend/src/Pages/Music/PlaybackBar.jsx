@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardStep, faPlay, faPause, faForwardStep } from '@fortawesome/free-solid-svg-icons';
-import { useMedia } from '../Context/MediaContext';
+import { useMedia } from '../../Context/MediaContext';
 import './PlaybackBar.css';
 import { motion, AnimatePresence } from 'framer-motion';
 

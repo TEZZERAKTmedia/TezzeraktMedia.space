@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import introVideoSrc from '../assets/INTRO1000.webm';
-import loopVideoSrc from '../assets/LOOP4000.webm';
-import PortfolioOverlay from '../Pages/PortfolioOverlay.jsx';
+import introVideoSrc from '../../assets/INTRO1000.webm';
+import loopVideoSrc from '../../assets/LOOP4000.webm';
+import PortfolioOverlay from './PortfolioOverlay.jsx';
 
 import './VideoManager.css';
 

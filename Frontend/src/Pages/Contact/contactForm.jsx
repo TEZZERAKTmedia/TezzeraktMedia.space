@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {registerApi} from "../config/axios";
+import {registerApi} from "../../config/axios";
 import "./contactForm.css";
 
 

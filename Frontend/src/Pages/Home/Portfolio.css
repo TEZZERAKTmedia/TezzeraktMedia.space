@@ -8,38 +8,51 @@
 }
 
 .portfolio-container {
-  position: relative; /* Keeps the header fixed during scrolling */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%);
+  position: fixed;          /* Cover entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;             /* Full width */
+  height: 100vh;            /* Full height */
+  overflow-y: auto;         /* Enable vertical scrolling */
+  overflow-x: hidden;       /* Prevent horizontal scroll if not needed */
   font-family: Arial, sans-serif;
-  height: 100%;
-  border-radius: 50px;
-  padding: 20px;
-  z-index: 10;
+  z-index: 10;              /* Above background, below other overlays if needed */
   
-  opacity: 0; /* Hidden initially */
-  animation: fadeIn 0s ease-in-out 0s forwards; /* Animation with delay */
+  /* Optional styling */
+  background-color: rgba(0, 0, 0, 0.459);  /* If you want a dark overlay */
+  animation: fadeIn 0.5s ease-in-out forwards;  /* Fade-in animation */
+
+  /* Remove or adjust border-radius/padding if you want a full overlay */
+  border-radius: 0;
+              /* Keep some padding if you want space inside */
+  padding-bottom: 20px;
+  opacity: 0;               /* Start hidden, fadeIn will fix it */
 }
 
 
 /* Media Queries to adjust the top percentage for different screen sizes */
 @media (max-width: 600px) {
-  .portfolio-container {
+  .portfolio-section-container {
     top: 75%; /* Adjust top for mobile devices */
+    height: 100%;
     
   }
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
-  .portfolio-container {
+  .portfolio-section-container {
     top: 70%; /* Adjust top for tablets */
   }
 }
 
 @media (min-width: 1201px) {
-  .portfolio-container {
+  .portfolio-section-container {
     top: 65%; /* Default top for desktops */
   }
+}
+.portfolio-section-container {
+  margin-top: 50%;
+  left: 0;
 }
 
 
@@ -69,7 +82,7 @@
   height: 13.4%;
   z-index: 9999;
   
-  background-color: rgba(0, 0, 0, 0.2); /* Initial background state post-animation */
+  background-color:rgba(0, 0, 0, 0.459); /* Initial background state post-animation */
   animation: fadeInAndStay 10s forwards; /* Animation to initial state */
   transition: background-color 10s ease-in-out; /* Smooth transition for background color changes */
   perspective: 1000px; /* For 3D flip effect */
@@ -218,4 +231,15 @@ form {
 
 .scroll-button.right {
   right: -40px; /* Adjust positioning */
+}
+.contact-button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  right: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
 }

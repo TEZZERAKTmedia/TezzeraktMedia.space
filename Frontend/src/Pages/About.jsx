@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
-import { useVideo } from '../VideoContext'; // Ensure this path is correct
+import { useVideo } from './Home/VideoContext'; // Ensure this path is correct
 import introVideoSrc from '../assets/LOOP4000.webm'; // Path to the intro video
 import loopVideoSrc from '../assets/LOOP4000.webm'; // Path to the looping video
 import '../components/About.css';

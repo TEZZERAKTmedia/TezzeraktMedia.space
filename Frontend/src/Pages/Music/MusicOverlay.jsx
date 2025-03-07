@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { useMedia } from '../Context/MediaContext';
-import tracks from './tracks';
+import { useMedia } from '../../Context/MediaContext';
+import tracks from '../../components/tracks';
 import './MusicPageOverlay.css';
 
 const MusicPageOverlay = () => {

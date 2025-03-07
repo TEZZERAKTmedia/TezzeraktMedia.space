@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { VideoProvider } from './VideoContext';
+import { VideoProvider } from './Pages/Home/VideoContext';
 import { MediaProvider, useMedia } from './Context/MediaContext';
 import Header from './components/Header';
-import Home from './components/Home';
-import MusicPage from './Pages/Music';
-import ContactPage from './Pages/Contact';
-import PortfolioPage from './Pages/Portfolio';
+import Home from './Pages/Home/Home';
+import MusicPage from './Pages/Music/Music';
+import ContactPage from './Pages/Contact/Contact';
+import PortfolioPage from './Pages/Home/Portfolio';
 import AboutPage from './Pages/About';
 import RedirectOnRefresh from './components/RedirectOnRefresh';
 

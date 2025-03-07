@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlayBar from './PlaybackBar';
+import PlayBar from '../Pages/Music/PlaybackBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify, faApple, faYoutube, faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import './Header.css'; // Make sure to create a corresponding CSS file for styles
