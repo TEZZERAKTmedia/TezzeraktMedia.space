@@ -6,6 +6,9 @@ import ThrivePersonology from '../../assets/ThrivePersonology.webp';
 import BoogieBoys from '../../assets/BoogieBoys.webp';
 import BakersBurns from '../../assets/BakersBurns1.webp';
 import ContactForm from '../Contact/ContactForm';
+import { Github } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpotify, faApple, faYoutube, faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 
 function PortfolioOverlay() {
   const [flipWeb, setFlipWeb] = useState(false);
@@ -47,15 +50,19 @@ function PortfolioOverlay() {
   return (
     <div className="portfolio-container" >
       <div className="portfolio-section-container" style={{paddingBottom: '100px'}}>
-        <section id="web-design" className={`portfolio-section ${flipWeb ? 'flip' : ''}`} onClick={() => toggleFlip('web')}>
-          <div className="front">
-            <h2>Web Design</h2>
-            <button className="latest-websites-button" onClick={() => setShowLatestWebsites(!showLatestWebsites)}>Check out my latest websites</button>
+        <section className='portfolio-section'>
+        <div className="front">
+            <h2>Web Design </h2>
+            <div className="button-container">
+              <a href="https://github.com/TEZZERAKTmedia" target="_blank" rel="noopener noreferrer" className="github-button">
+                <Github size={18} className="github-icon" />
+              </a>
+              <button className="latest-websites-button" onClick={() => setShowLatestWebsites(!showLatestWebsites)}>
+                Check out my latest websites
+              </button>
+            </div>
           </div>
-          <div className="back">
-            <h2>Tools & Technologies</h2>
-            <p>HTML, CSS, JavaScript, React, Node.js</p>
-          </div>
+
         </section>
 
         <AnimatePresence>
@@ -81,6 +88,20 @@ function PortfolioOverlay() {
         <section id="music" className={`portfolio-section ${flipMusic ? 'flip' : ''}`} onClick={() => toggleFlip('music')}>
           <div className="front">
             <h2>Music Production</h2>
+            <div className="music-links">
+          <a href="https://open.spotify.com/artist/7xw1rXws8fauJeu9xLcUvL" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faSpotify} size="2x" color="white"/>
+          </a>
+          <a href="https://music.apple.com/us/artist/id1675921847" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faApple} size="2x" color="white" />
+          </a>
+          <a href="https://www.youtube.com/watch?v=_lK9tJbNQVM&list=OLAK5uy_nlQrbzvMJlJ_BItArcovVk9UW9oJ_-4xY" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faYoutube} size="2x" color="white" />
+          </a>
+          <a href="https://soundcloud.com/trentyn-nicholas-2276389/sets/coagulum-1" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faSoundcloud} size="2x" color="white" />
+          </a>
+        </div>
           </div>
           <Link to="/music">
             <div className="back">

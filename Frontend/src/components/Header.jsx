@@ -24,20 +24,7 @@ function Header() {
           </ul>
         </nav>
 
-        <div className="music-links">
-          <a href="https://open.spotify.com/artist/7xw1rXws8fauJeu9xLcUvL" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faSpotify} size="2x" color="white"/>
-          </a>
-          <a href="https://music.apple.com/us/artist/id1675921847" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faApple} size="2x" color="white" />
-          </a>
-          <a href="https://www.youtube.com/watch?v=_lK9tJbNQVM&list=OLAK5uy_nlQrbzvMJlJ_BItArcovVk9UW9oJ_-4xY" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faYoutube} size="2x" color="white" />
-          </a>
-          <a href="https://soundcloud.com/trentyn-nicholas-2276389/sets/coagulum-1" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faSoundcloud} size="2x" color="white" />
-          </a>
-        </div>
+        
 
         <PlayBar />
       </header>

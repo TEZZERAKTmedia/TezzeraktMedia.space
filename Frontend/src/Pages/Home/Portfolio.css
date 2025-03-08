@@ -7,6 +7,7 @@
   }
 }
 
+
 .portfolio-container {
   position: fixed;          /* Cover entire viewport */
   top: 0;
@@ -169,6 +170,48 @@ form {
   max-width: 500px;
   margin: auto;
 }
+.button-container {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Align vertically */
+  gap: 12px; /* Add spacing between buttons */
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Fixed width for icon button */
+  height: 40px; /* Fixed height for icon button */
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.github-button:hover {
+  background-color: #555;
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.latest-websites-button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.latest-websites-button:hover {
+  background-color: #0056b3;
+}
+
 
 .latest-websites-container {
   position: relative;
